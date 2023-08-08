@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrBank</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./main.css">
     <style>
         a ::after {
@@ -14,22 +14,82 @@
 </head>
 
 <body>
-    <div>
-    <button class="btn btn--size-l btn--suc btn--size">GO TO NEXT APPROVAL </button>
-    <button class="btn btn--size-l btn--warn ">OK</button>
-    <button class="btn btn--size-l btn--danger">TRY AGAIN</button>
-    </div>
+   <div id="toast"></div>
+   <div>
+        <div onclick="showSuccessToast();" class="btn btn--suc">Show success toast</div>
+        <div onclick="showErrorToast();"class="btn btn--danger">Show error toast</div>
+   </div>
 
-    <div>
-        <button class="btn btn--size-m btn--suc btn--size">GO TO NEXT APPROVAL </button>
-        <button class="btn btn--size-m btn--warn ">OK</button>
-        <button class="btn btn--size-m btn--danger">TRY AGAIN</button>
-    </div>
+   <script>
+        // Tost function
+        function toast({
+            title='',
+            message='',
+            type='info',
+            duration=3000
+            }) {
+                const main= document.getElementById('toast');
+                if(main){
+                    const toast= document.createElement('div');
 
-    <div>
-        <button class="btn btn--size-s btn--suc btn--size">GO TO NEXT APPROVAL </button>
-        <button class="btn btn--size-s btn--warn ">OK</button>
-        <button class="btn btn--size-s btn--danger">TRY AGAIN</button>
-    </div>
+                    const autoRemoveId = setTimeout(function(){
+                        main.removeChild(toast);
+                    }, duration + 1000);
+
+                    toast.onclick = function(e){
+                        if(e.target.closest('.toast__close')){
+                            main.removeChild(toast);
+                            clearTimeout(autoRemoveId);
+                        }
+                    }
+
+
+                    const icons = {
+                        success:"fa-solid fa-circle-check",
+                        info:"fa-solid fa-circle-info",
+                        warning:"fa-solid fa-triangle-exclamation",
+                        error:"fa-solid fa-bug",
+
+                    };
+                    const icon = icons[type];
+                    const delay = (duration / 1000).toFixed(2);
+
+                    toast.classList.add('toast', `toast--${type}`);
+                    toast.style.animation= `slideinleft ease 0.5s, fadeout linear 1s ${delay}s forwards `
+                    toast.innerHTML = `
+                    <div class="toast__icon">
+                        <i class="${icon}"></i>
+                    </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">${title}</h3>
+                        <p class="toast__msg">${message}</p>
+                    </div>
+                    <div class="toast__close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    `;
+                    main.appendChild(toast);
+                    
+                }
+        }
+       
+        function showSuccessToast(){
+            toast({
+                title: 'Thanh cong',
+                message: 'thanh cong',
+                type: 'success',
+                duration: 5000
+            });
+        }
+
+        function showErrorToast(){
+            toast({
+                title: 'Error',
+                message: 'Loi me roi',
+                type: 'error',
+                duration: 5000
+            });
+        }
+   </script>
 </body>
 </html>
