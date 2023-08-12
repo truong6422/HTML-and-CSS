@@ -1,62 +1,83 @@
 <html lang="en">
 <head>
-    <!--Begin-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrBank</title>
-    <!-- <style>
-        h1 { 
-            color:red;
-            font-size: 100px;
-        }
-    </style> -->
-    <!-- <link rel="stylesheet" href="./main.css"> -->
+    <title>Trbank</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.4.2-web/css/all.min.css">
 </head>
-
 <body>
-    <div>
-        <h1 style="color: yellow; font: 50px">Test thôi chứ có cái gì đâu</h1>
-        <p>Anh/Chị cho em xin review các môn năm 2 với ạ 😭 KTCT Mác-Lênin
-            Tư duy sáng tạp và khởi nghiệp
-            Tiếng Việt thực hành
-            Thiết kế cuộc đời
-            Logic học đại cương
-            và môn Cảm thụ nghệ thuật nếu như chọn guitar thì sẽ học ntn ạ?
-            Ngoài các môn trên anh/chị có reviewdc thêm môn nào khác nữa thì em cảm ơn ạ</p>
-        <img src="./Anh/IMG_20220513_131739.jpg" alt="Anh linh tinh">
-        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fafamily.vn%2Fthanh-xuan-co-ban-3-lo-hinh-cung-xiu-cua-lisa-blackpink-con-chu-moi-hon-meo-khien-netizen-phat-cuong-20210429224523816.chn&psig=AOvVaw2CX4jiE5Bch1A2vPhY7vgz&ust=1691224575816000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJD8tb7NwoADFQAAAAAdAAAAABAE">Tới ảnh Lisa</a>
-        
-        <ul>
-            <li>Truong</li>
-            <li>Dep</li>
-            <li>Trai</li>
-            <li>Vl</li>
-        </ul>
+    <div class="app">
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--qr header__navbar-item--space"> 
+                            Vào cửa hàng trên ứng dụng
+                            <div class="header__qr">
+                                <img src="./assets/img/mb.jpg" alt="Qr code" class="header__qr-img">
+                                <div class="header__qr-app">
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/chplay.png" alt="Google play" class="header__qr-download-img">
+                                    </a>
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/app store.png" alt="App store" class="header__qr-download-img">
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item"> 
+                            <span class="header__navbar-title--no-pointer">Kết nối</span>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fa-brands fa-facebook"></i>
+                            </a>
 
-        <table>
-            <thead>
-                <th>STT</th>
-                <th>Name</th>
-                <th>MSSV</th>
-            </thead>
-            
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Truong</td>
-                    <td>AT180546</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Trung</td>
-                    <td>AT180549</td>
-                </tr>
-            </tbody>
-        </table>
-        <input type="text">
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fa-brands fa-instagram"></i>
+                            </a>
 
-        <button> Dang ky</button>
-        
+                        </li>                    
+                    </ul>
+    
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <a href="" class="header__navbar-icon-link">
+                                    <i class="header__navbar-icon fa-solid fa-bell"></i>
+                                </a>
+                                Thông báo
+                            </a>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <a href="" class="header__navbar-icon-link">
+                                   <i class="header__navbar-icon fa-solid fa-circle-question"></i>
+                                </a>
+                                Trợ giúp
+                            </a>
+                        </li>
+                        <li class="header__navbar-item header__navbar-item--strong header__navbar-item--space">Đăng ký</li>
+                        <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
+                    </ul>
+                </nav>   
+            </div>
+
+        </header>
+
+        <div class="container">
+
+        </div>
+
+        <footer class="footer">
+
+        </footer>
+
     </div>
 </body>
 </html>
